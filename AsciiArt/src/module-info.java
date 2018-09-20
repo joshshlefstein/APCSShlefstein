@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author joshshlefstein
- *
- */
-module AsciiArt {
-}
