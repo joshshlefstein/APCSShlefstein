@@ -26,6 +26,16 @@ public class GraphicsLab_04_110Point extends Applet {
 				g.drawLine(400, 400, 700, 500);
 				g.drawLine(500, 300, 500, 500);
 				g.drawLine(600, 400, 300, 500);
+				
+				//Prism
+				g.drawLine(550, 50, 350, 250);//
+				g.drawLine(550, 50, 750, 250);//
+				g.drawLine(350, 250, 750, 250);//
+				g.drawLine(460, 140, 750, 250);
+				g.drawLine(550, 50, 563, 179);
+				g.drawLine(650, 150, 350, 250);
+				g.drawLine(563, 179, 530, 250);
+				
 	}
 
 }
