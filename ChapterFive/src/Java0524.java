@@ -20,6 +20,7 @@ public class Java0524 extends Applet
 			g.drawRect(50,50,side,side);	
 			side += 20;
 		}
+		
 	}
 }
 

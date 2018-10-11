@@ -1,4 +1,4 @@
-// Java0524.java
+// Java0523.java
 // This program demonstrates how to rotate a line around a point.
 // In this case the (x1,y1) coordinate stays fixed and the (x2,y2) point changes.
 
@@ -7,7 +7,7 @@ import java.awt.*;
 import java.applet.*;
 
 
-public class Java0524 extends Applet
+public class Java0523 extends Applet
 {
 	public void paint(Graphics g)
 	{
