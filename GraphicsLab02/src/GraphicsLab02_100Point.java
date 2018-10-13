@@ -11,10 +11,12 @@ public class GraphicsLab02_100Point extends Applet{
 		int y1 = 10;
 		int x2 = 990;
 		int y2 = 640;
-		for (int k = 1; k < 35; k++)
+		for (int k = 1; k < 64; k++)
 		{
-			g.drawLine(x1,y1,x2,y2);;
-			x2 -= 15;	
+			g.drawLine(x1,y1,x2,y2);
+			x2 -= 15;
+			y1 += 10;
+			
 		}
 		
 		int a1=10;
@@ -22,10 +24,11 @@ public class GraphicsLab02_100Point extends Applet{
 		int a2=10;
 		int b2=640;
 		
-		for (int k = 1; k < 35; k++)
+		for (int k = 1; k < 64; k++)
 		{
-			g.drawLine(a1,b1,a2,b2);;
-			a2 += 15;	
+			g.drawLine(a1,b1,a2,b2);
+			a2 += 15;
+			b1 += 10;
 		}
 		
 		int c1=10;
@@ -33,10 +36,11 @@ public class GraphicsLab02_100Point extends Applet{
 		int c2=10;
 		int d2=10;
 		
-		for (int k = 1; k < 35; k++)
+		for (int k = 1; k < 64; k++)
 		{
-			g.drawLine(c1,d1,c2,d2);;
+			g.drawLine(c1,d1,c2,d2);
 			c2 += 15;	
+			d1 -= 10;
 		}
 		
 		int j1=990;
@@ -44,10 +48,11 @@ public class GraphicsLab02_100Point extends Applet{
 		int j2=990;
 		int s2=10;
 		
-		for (int k = 1; k < 35; k++)
+		for (int k = 1; k < 64; k++)
 		{
-			g.drawLine(j1,s1,j2,s2);;
+			g.drawLine(j1,s1,j2,s2);
 			j2 -= 15;	
+			s1 -= 10;
 		}
 	}
 
