@@ -13,8 +13,6 @@ public class Arrays {
 		
 		System.out.println("\n"+ average(numArray));
 		
-			
-		System.out.println(does5Exist(numArray));
 		
 		reverse(numArray);
 //		System.out.println("Index position of 5 is: "+ findIndex(numArray[5])); 
@@ -74,13 +72,6 @@ public class Arrays {
 	}
 	//find the index of an array element
 	
-//		public static int[] findIndex(int[] array) {
-//			for(int i = 0; i < array.length; i++) {
-//				if(array[i] ==5)
-//					System.out.println(i);
-//			}
-//			return array;
-//		}
 	
 	//challenge: remove a specific element from an array and return the new array without the value
 	}
