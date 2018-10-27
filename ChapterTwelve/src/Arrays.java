@@ -15,11 +15,7 @@ public class Arrays {
 		
 		
 		reverse(numArray);
-//		System.out.println("Index position of 5 is: "+ findIndex(numArray[5])); 
-		for(int i = 0; i < numArray.length; i++) {
-			if(numArray[i] == 5)
-				System.out.println(i);
-		}
+		System.out.println(findIndex(numArray, 2));
 		
 	}
 
@@ -71,7 +67,16 @@ public class Arrays {
 		return exists;
 	}
 	//find the index of an array element
-	
+	public static int findIndex(int[] array, int t) {
+		if(array==null) return-1;
+		int length=array.length;
+		int i = 0;
+		while (i<length) {
+			if (array[i]==t) return i;
+			else i=i+1;
+		}
+		return -1;
+	}
 	
 	//challenge: remove a specific element from an array and return the new array without the value
 	}
