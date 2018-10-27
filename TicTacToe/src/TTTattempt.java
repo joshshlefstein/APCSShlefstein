@@ -178,11 +178,11 @@ public class TTTattempt {
 		{
 				if(board[0][c]=='x' && board[1][c]=='x' && board[2][c]=='x') {
 					System.out.println("Player X Wins!");
-					break;
+					
 				}
 				if(board[0][c]=='y' && board[1][c]=='y' && board[2][c]=='y') {
 					System.out.println("Player Y Wins!");
-					break;
+				
 					}
 				break;
 				
