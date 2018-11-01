@@ -14,23 +14,20 @@ public class TicTacToe {
 			checkW=checkWinner();
 			if(checkW=='X'||checkW=='O'||checkW=='T') {
 				winner=true;
-				System.out.println(checkW);
+				System.out.println("\n"+ checkW+ " Wins!");
 			}
+			
 			else {
 				playO();
 				printBoard();
 				checkW=checkWinner();
 				if(checkW=='X'||checkW=='O'||checkW=='T') {
 					winner=true;
-					System.out.println(checkW);
-				}
-							
+					System.out.println("\n"+ checkW + " Wins!");
+				}			
 			}
 		}
-		
-		
 	}
-	
 	
 	public static void printBoard() {
 		System.out.println(board[0]+" | "+board[1]+" | "+board[2]+"\n"
@@ -41,31 +38,33 @@ public class TicTacToe {
 	}
 		
 	public static void playX() {
-		System.out.println("Player X");
+		System.out.println("\nPlayer X");
 		Scanner keyboard=new Scanner(System.in);
 		System.out.print("Pick spot --> ");
 		int x=keyboard.nextInt();
+		System.out.println("\n");
 		
 		if(board[x]=='X'||board[x]=='O') {
 			System.out.println("Spot already taken, try again");
 			playX();
-	}
+		}
+		
 		else {
 			board[x]='X';
-		}
-			
+		}	
 	}
 	
 	public static void playO() {
-		System.out.println("Player O");
+		System.out.println("\nPlayer O");
 		Scanner keyboard=new Scanner(System.in);
 		System.out.print("Pick spot --> ");
 		int x=keyboard.nextInt();
+		System.out.println("\n");
 		
 		if(board[x]=='X'||board[x]=='O') {
 			System.out.println("Spot already taken, try again");
 			playO();
-	}
+		}
 		else {
 			board[x]='O';
 		}
@@ -82,52 +81,51 @@ public class TicTacToe {
 		String line8= ""+board[0]+board[4]+board[8];
 		String line9= ""+board[2]+board[4]+board[6];
 	
-		if(line1.equals("XXX")) {
-			System.out.println(line1);	
-			return 'X';}
-		else if(line1.equals("OOO")) {
+		if(line1.equals("XXX"))
+			return 'X';
+		else if(line1.equals("OOO")) 
 			return'O';
-			}
+		
 		else if(line2.equals("XXX")) 
 			return 'X';
-		else if(line2.equals("OOO")) {
+		else if(line2.equals("OOO")) 
 			return'O';
-			}
+			
 		else if(line3.equals("XXX")) 
 			return 'X';
-		else if(line3.equals("OOO")) {
+		else if(line3.equals("OOO")) 
 			return'O';
-			}
+			
 		else if(line4.equals("XXX")) 
 			return 'X';
-		else if(line4.equals("OOO")) {
+		else if(line4.equals("OOO")) 
 			return'O';
-			}
+			
 		else if(line5.equals("XXX")) 
 			return 'X';
-		else if(line5.equals("OOO")) {
+		else if(line5.equals("OOO")) 
 			return'O';
-			}
+			
 		else if(line6.equals("XXX")) 
 			return 'X';
-		else if(line6.equals("OOO")) {
+		else if(line6.equals("OOO")) 
 			return'O';
-			}
+			
 		else if(line7.equals("XXX")) 
 			return 'X';
-		else if(line7.equals("OOO")) {
+		else if(line7.equals("OOO")) 
 			return'O';
-			}
+			
 		else if(line8.equals("XXX")) 
 			return 'X';
-		else if(line8.equals("OOO")) {
+		else if(line8.equals("OOO")) 
 			return'O';
-			}
+			
 		else if(line9.equals("XXX")) 
 			return 'X';
-		else if(line9.equals("OOO")) {
+		else if(line9.equals("OOO")) 
 			return'O';
-			}
+			
 		int counter=0;
 		for(int k=0; k<board.length;k++) {
 			if (board[k]=='X' || board[k]=='O') {
@@ -139,8 +137,5 @@ public class TicTacToe {
 		}
 		
 		return ' ';
-		
-		
 	}
-	
 }
