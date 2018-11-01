@@ -1,92 +1,146 @@
 import java.util.Scanner;
 public class TicTacToe {
 
-		static char[] board= new char[9];
+	static char[] board= {'0','1','2','3','4','5','6','7','8'};
 	
 	public static void main(String[] args) {
-		populateBoard();
 		printBoard();
-		playX();
-		printBoard();
-		playY();
-		playerMoves();
+		
+		boolean winner=false;
+		char checkW;
+		while(winner==false) {
+			playX();
+			printBoard();
+			checkW=checkWinner();
+			if(checkW=='X'||checkW=='O'||checkW=='T') {
+				winner=true;
+				System.out.println(checkW);
+			}
+			else {
+				playO();
+				printBoard();
+				checkW=checkWinner();
+				if(checkW=='X'||checkW=='O'||checkW=='T') {
+					winner=true;
+					System.out.println(checkW);
+				}
+							
+			}
+		}
+		
 		
 	}
 	
 	
 	public static void printBoard() {
 		System.out.println(board[0]+" | "+board[1]+" | "+board[2]+"\n"
-				+ 		   "---------\n"
+				+ 		   "----------\n"
 				+ 		   board[3]+" | "+board[4]+" | "+board[5]+"\n"
-				+ 		   "---------\n"
+				+ 		   "----------\n"
 				+ 		   board[6]+" | "+board[7]+" | "+board[8]);
-		
-		
-		if(board[0]==' ')System.out.println("board 0 empty");
 	}
-	
+		
 	public static void playX() {
+		System.out.println("Player X");
+		Scanner keyboard=new Scanner(System.in);
+		System.out.print("Pick spot --> ");
+		int x=keyboard.nextInt();
 		
+		if(board[x]=='X'||board[x]=='O') {
+			System.out.println("Spot already taken, try again");
+			playX();
 	}
-    
-	public static void playY() {
-		
-	}
-	public static void populateBoard() {
-		for(int i = 0; i<board.length;i++)
-
-			board[i] = ' ';
-	}
-	//2. user input for x's and O's and you want to print your board after each user inputs
-	
-	//3. checkWinner() method.
-	
-	public static void playerMoves() {
-		int x=0;
-		int y=0;
-		int xcoordinate = 0;
-		int ocoordinate = 0;
-		while(x<1) {
-			Scanner keyboard  = new Scanner(System.in);
-		
-		System.out.print("Choose X spot ===>>  ");										
-		xcoordinate  = keyboard.nextInt();
-		if(xcoordinate==1) {
-			board[0]= 'x';
-			x=1;
+		else {
+			board[x]='X';
 		}
-		else if(xcoordinate==2) {
-			board[1]= 'x';
-			x=1;
-		}
-		else if(xcoordinate==3) {
-			board[2]= 'x';
-			x=1;
-		}
-		else
-			System.out.println("invalid move");
-		
-		printBoard();
-		}
-		
-		while(y<1) {
-			Scanner keyboard  = new Scanner(System.in);
-		System.out.println("Choose O spot ===>>  ");
-		ocoordinate = keyboard.nextInt();
-		if(ocoordinate==1 && xcoordinate==1) {
-			System.out.println("Invalid");
 			
-			
-		}
-		else if(ocoordinate==1) {
-			board[0]= 'o';
-			y=1;
-		}
-		else
-		System.out.println("invalid move");
+	}
+	
+	public static void playO() {
+		System.out.println("Player O");
+		Scanner keyboard=new Scanner(System.in);
+		System.out.print("Pick spot --> ");
+		int x=keyboard.nextInt();
 		
-		printBoard();
+		if(board[x]=='X'||board[x]=='O') {
+			System.out.println("Spot already taken, try again");
+			playO();
+	}
+		else {
+			board[x]='O';
 		}
+	}
+	
+	public static char checkWinner() {
+		String line1= ""+board[0]+board[1]+board[2];
+		String line2= ""+board[3]+board[4]+board[5];
+		String line3= ""+board[6]+board[7]+board[8];
+		String line4= ""+board[0]+board[1]+board[2];
+		String line5= ""+board[0]+board[3]+board[6];
+		String line6= ""+board[1]+board[4]+board[7];
+		String line7= ""+board[2]+board[5]+board[8];
+		String line8= ""+board[0]+board[4]+board[8];
+		String line9= ""+board[2]+board[4]+board[6];
+	
+		if(line1.equals("XXX")) {
+			System.out.println(line1);	
+			return 'X';}
+		else if(line1.equals("OOO")) {
+			return'O';
+			}
+		else if(line2.equals("XXX")) 
+			return 'X';
+		else if(line2.equals("OOO")) {
+			return'O';
+			}
+		else if(line3.equals("XXX")) 
+			return 'X';
+		else if(line3.equals("OOO")) {
+			return'O';
+			}
+		else if(line4.equals("XXX")) 
+			return 'X';
+		else if(line4.equals("OOO")) {
+			return'O';
+			}
+		else if(line5.equals("XXX")) 
+			return 'X';
+		else if(line5.equals("OOO")) {
+			return'O';
+			}
+		else if(line6.equals("XXX")) 
+			return 'X';
+		else if(line6.equals("OOO")) {
+			return'O';
+			}
+		else if(line7.equals("XXX")) 
+			return 'X';
+		else if(line7.equals("OOO")) {
+			return'O';
+			}
+		else if(line8.equals("XXX")) 
+			return 'X';
+		else if(line8.equals("OOO")) {
+			return'O';
+			}
+		else if(line9.equals("XXX")) 
+			return 'X';
+		else if(line9.equals("OOO")) {
+			return'O';
+			}
+		int counter=0;
+		for(int k=0; k<board.length;k++) {
+			if (board[k]=='X' || board[k]=='O') {
+				counter++;
+			}
 		}
+		if(counter==9) {
+			return 'T';
+		}
+		
+		return ' ';
+		
 		
 	}
+	
+}
