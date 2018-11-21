@@ -2,18 +2,32 @@
 public class TestPumpkin {
 
 	public static void main(String[] args) {
-		Pumpkin firstPumpkin = new Pumpkin(1);
-		Pumpkin secondPumpkin = new Pumpkin(2);
-		Pumpkin thirdPumpkin = new Pumpkin(3);
-		
-		System.out.println("Total W: "+((firstPumpkin.getWeight())+(secondPumpkin.getWeight())+(thirdPumpkin.getWeight())));
-		System.out.println("Total PPP: "+((firstPumpkin.pricePerPound)+(secondPumpkin.pricePerPound)+(thirdPumpkin.pricePerPound)));
 
-		System.out.println("P1. W: "+firstPumpkin.weight+" PPP: "+firstPumpkin.pricePerPound);
-		System.out.println("P2. W: "+secondPumpkin.weight+" PPP: "+secondPumpkin.pricePerPound);
-		System.out.println("P3. W: "+thirdPumpkin.weight+" PPP: "+thirdPumpkin.pricePerPound);
+		Pumpkin skinnyPumpkin = new Pumpkin(5);
+		Pumpkin averagePumpkin = new Pumpkin(10);
+		Pumpkin fatPumpkin = new Pumpkin(15);
+
+		System.out.println("Total Weight: " + (skinnyPumpkin.getWeight() + averagePumpkin.getWeight() + fatPumpkin.getWeight()) + "\n");
+		System.out.println("Total Price: " + (skinnyPumpkin.getPrice() + averagePumpkin.getPrice() + fatPumpkin.getPrice()) + "\n");
+
+		System.out.println("Skinny Pumpkin Weight: " + skinnyPumpkin.getWeight());
+		System.out.println("Average Pumpkin Weight: " + averagePumpkin.getWeight());
+		System.out.println("Fat Pumpkin Weight: " + fatPumpkin.getWeight() + "\n");
+
+		System.out.println("Skinny Pumpkin Price: " + skinnyPumpkin.getPrice());
+		System.out.println("Average Pumpkin Price: " + averagePumpkin.getPrice());
+		System.out.println("Fat Pumpkin Price: " + fatPumpkin.getPrice() + "\n");
+
+		for (int i = 1; i <= 5; i++) {
+			skinnyPumpkin.grow();
+			averagePumpkin.grow();
+			fatPumpkin.grow();
+		}
 		
-		
+		System.out.println("New weight of skinny pumpkin: " + skinnyPumpkin.getWeight());
+		System.out.println("New weight of average pumpkin: " + averagePumpkin.getWeight());
+		System.out.println("New weight of fat pumpkin: " + fatPumpkin.getWeight());
+
 	}
 
 }
