@@ -12,6 +12,6 @@ public class TestAccount {
 		
 		System.out.println("---Withdraw $147---\n");
 		myAccount.withdraw(147);
-		System.out.println("Balance after withdrawal: $" + myAccount.getBalance());
+		System.out.print("Balance after withdrawal: $" + myAccount.getBalance());
 	}
 }
