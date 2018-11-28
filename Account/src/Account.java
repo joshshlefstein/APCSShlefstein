@@ -1,6 +1,6 @@
 
 public class Account {
-	private double balance;
+	protected double balance;
 
 	public Account(double initialBalance) {
 		balance = initialBalance;
@@ -14,7 +14,16 @@ public class Account {
 		balance = balance + amt;
 	}
 
-	public void withdraw(double amt) {
-		balance = balance - amt;
+	public boolean withdraw(double amt) {
+		
+		if((balance-amt)<0){
+			return false;
+		}
+		else {
+			balance = balance - amt;
+			return true;
+			
+			
+		}
 	}
 }
