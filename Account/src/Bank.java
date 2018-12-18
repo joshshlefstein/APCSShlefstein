@@ -8,10 +8,11 @@ public class Bank {
 		numberOfCustomers = 0;
 	}
 
-	public void addCustomer(String f, String l, int initBalance) {
+	public void addCustomer(String f, String l, double initBalance) {
 		Customer c = new Customer(f, l, initBalance); //new customer object with the attributes f,l, initBalance
-		numberOfCustomers = numberOfCustomers + 1;// updates the number of customers objects
 		customers[numberOfCustomers] = c; //placed the new customer object into the array
+		numberOfCustomers = numberOfCustomers + 1;// updates the number of customers objects
+		
 	}
 
 	public int getNumOfCustomers() {

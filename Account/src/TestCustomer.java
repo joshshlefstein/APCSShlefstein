@@ -16,5 +16,8 @@ public class TestCustomer {
 		NoaAccount.withdraw(10);
 		System.out.println(Noa.getFirstName()+" balance is "+NoaAccount.getBalance());
 		
+		
+		
+		
 	}
 }
