@@ -1,8 +1,8 @@
 
 public class Truck extends Vehicle {
 
-	public Truck(String make, String model, int year, double price) {
-		super(make, model, year, price);
+	public Truck(String make1, String model1, int y, double p) {
+		super(make1, model1, y, p);
 
 	}
 

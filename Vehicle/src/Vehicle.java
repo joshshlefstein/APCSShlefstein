@@ -1,12 +1,15 @@
 
 public class Vehicle {
-	String make;
-	String model;
-	int year;
-	double price;
+	private String make;
+	private String model;
+	private int year;
+	private double price;
 
-	public Vehicle(String make, String model, int year, double price) {
-
+	public Vehicle(String make1, String model1, int y, double p) {
+		make = make1;
+		model = model1;
+		year = y;
+		price = p;
 	}
 
 	public void vehicleDescription() {
