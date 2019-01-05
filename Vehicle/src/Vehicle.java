@@ -1,52 +1,36 @@
-import java.awt.Color;
-import java.awt.Graphics;
-
+import java.awt.*;
 
 public class Vehicle {
-	private String make;
-	private String model;
-	private int year;
-	private double price;
-	private Color color;
-	private int numberOfSeats;
+	private Color c;
+	private int x1;
 
-	public Vehicle(Graphics g, int x, String make1, String model1, int y, double p, Color c, int numSeats) {
-		make = make1;
-		model = model1;
-		year = y;
-		price = p;
-		color = c;
-		numberOfSeats = numSeats;
-		
-	g.setColor(c);
-	g.fillRect(x, 200, 300, 100);
-	g.setColor(Color.black);
-	g.fillOval(x + 50, 280, 50, 50);
-	g.fillOval(x + 200, 280, 50, 50);
+	public Vehicle(Graphics g, int x, Color color) {
+		c = color;
+		x1 = x;
+		drawBody(g);
+		drawHeadlights(g);
+		drawBrakelights(g);
 	}
 
-	public String getMake() {
-		return make;
+	public void drawBody(Graphics g) {
+		g.setColor(c);
+		g.fillRect(x1, 200, 300, 100);
+		g.setColor(Color.black);
+		g.fillOval(x1 + 50, 280, 50, 50);
+		g.fillOval(x1 + 200, 280, 50, 50);
+		g.setColor(Color.gray);
+		g.fillOval(x1 + 60, 290, 30, 30);
+		g.fillOval(x1 + 210, 290, 30, 30);
 	}
 
-	public String getModel() {
-		return model;
+	public void drawHeadlights(Graphics g) {
+		g.setColor(Color.yellow);
+		g.fillOval(x1 - 5, 260, 10, 10);
 	}
 
-	public int getYear() {
-		return year;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-	
-	public Color getColor() {
-		return color;
-	}
-	
-	public int getNumberOfSeats() {
-		return numberOfSeats;
+	public void drawBrakelights(Graphics g) {
+		g.setColor(Color.red);
+		g.fillOval(x1 + 295, 260, 10, 10);
 	}
 
 }

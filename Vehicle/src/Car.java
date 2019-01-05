@@ -1,41 +1,31 @@
 import java.awt.*;
-import java.applet.*;
 
 public class Car extends Vehicle {
-	private int numberOfSeats = 0;
-	private boolean ac = false;
-	private boolean gps = false;
+	private int x1;
+	private Color c;
+	private Windows driverWindow;
+	private Windows passWindow;
+	private Mirrors carMirror;
 
-    
-	public Car(Graphics g, int x, String make1, String model1, int y, double p, Color c, int numSeats, boolean coolair, boolean directions) {
-		super(g, x, make1, model1, y, p, c, numSeats);
-		
-		ac = coolair;
-		gps = directions;
+	public Car(Graphics g, int x, Color color) {
+		super(g, x, color);
+		x1 = x;
+		c = color;
 		drawTop(g);
-		
+		driverWindow = new Windows(g, x, Color.white, "driver");
+		passWindow = new Windows(g, x, Color.white, "pass");
+		carMirror = new Mirrors(g, x, Color.lightGray, "car");
+
 	}
+
 	public void drawTop(Graphics g) {
 		Polygon top = new Polygon();
-		top.addPoint(150, 200);
-		top.addPoint(200, 155);
-		top.addPoint(300, 155);
-		top.addPoint(350, 200);
-		g.setColor(Color.blue);
+		top.addPoint(x1 + 50, 200);
+		top.addPoint(x1 + 100, 155);
+		top.addPoint(x1 + 200, 155);
+		top.addPoint(x1 + 250, 200);
+		g.setColor(c);
 		g.fillPolygon(top);
 	}
-	public int getNumberOfSeats() {
-		return numberOfSeats;
-    }
-	
-	public boolean getAC() {
-		return ac;
-	}
-	
-	public boolean getGPS() {
-		return gps;
-	}
-	
-	
 
 }
