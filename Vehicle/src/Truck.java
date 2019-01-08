@@ -6,16 +6,17 @@ public class Truck extends Vehicle {
 	private Windows driverWindow;
 	private Mirrors truckMirror;
 
-	public Truck(Graphics g, int x, Color color) {
-		super(g, x, color);
-		x1 = x;
-		c = color;
-		drawTop(g);
+	public Truck(Graphics g, int x, Color color) { // constructor
+		super(g, x, color); // inheritance
+		x1 = x; // set x1 = to the x in the constructor
+		c = color; // set c = to Color in the constructor
+		drawTop(g); // calls the methods and passes the graphics object
 		drawBed(g);
-		driverWindow = new Windows(g, x, Color.white, "truck");
-		truckMirror = new Mirrors(g, x, Color.lightGray, "truck");
+		driverWindow = new Windows(g, x, Color.white, "truck"); // composition. a truck has a window
+		truckMirror = new Mirrors(g, x, Color.lightGray, "truck"); // composition. a car has a mirror
 	}
 
+	// methods
 	public void drawTop(Graphics g) {
 		Polygon top = new Polygon();
 		top.addPoint(x1 + 40, 200);

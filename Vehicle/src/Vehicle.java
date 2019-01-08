@@ -4,15 +4,16 @@ public class Vehicle {
 	private Color c;
 	private int x1;
 
-	public Vehicle(Graphics g, int x, Color color) {
-		c = color;
-		x1 = x;
-		drawBody(g);
-		drawHeadlights(g);
-		drawBrakelights(g);
+	public Vehicle(Graphics g, int x, Color color) { //constructor
+		c = color; // set c = to Color in the constructor
+		x1 = x; //set x1 = to the x in the constructor
+		drawBody(g); //draw the main body that's in the car and truck class
+		drawHeadlights(g); // draw the headlights for the vehicle body
+		drawBrakelights(g); //draw the brakelights for the vehicle body
 	}
 
-	public void drawBody(Graphics g) {
+	// methods
+	public void drawBody(Graphics g) { 
 		g.setColor(c);
 		g.fillRect(x1, 200, 300, 100);
 		g.setColor(Color.black);
