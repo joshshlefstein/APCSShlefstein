@@ -17,7 +17,7 @@ public class CelsiusConverter implements ActionListener {
 		// creates text field, button, and label
 		cels = new JTextField("Temperature in Celsius");
 		JButton convert = new JButton("Convert");
-		fahr = new JLabel("Fahrenheit");
+		fahr = new JLabel("__° Fahrenheit");
 
 		// creates an action for the button
 		convert.addActionListener(this);
@@ -32,7 +32,6 @@ public class CelsiusConverter implements ActionListener {
 
 		// formats the frame
 		myFrame.setTitle("Convert Celsius to Fahrenheit");
-		;
 		myFrame.setSize(400, 400);
 		myFrame.setVisible(true);
 	}
@@ -45,7 +44,7 @@ public class CelsiusConverter implements ActionListener {
 		if (str.equals("Convert")) {
 			double newCels = Double.parseDouble(cels.getText());
 			double convertedTemp = newCels * (9 / 5) + 32;
-			fahr.setText(convertedTemp + "Fahrenheit"); // sets the label
+			fahr.setText(convertedTemp + "° Fahrenheit"); // sets the label
 		}
 
 	}
