@@ -2,3 +2,4 @@
 2 Sneakers 1 80.0 Black Dry-fit 8.5
 3 Dressshoes 1 100.0 Black Leather 9.5
 4 Casualshoes 2 50.0 Brown Leather 8.5
+5 Naot 1 75.99 Tan Leather 8.5

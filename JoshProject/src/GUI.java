@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
 
 public class GUI implements ActionListener {
 
@@ -25,6 +26,7 @@ public class GUI implements ActionListener {
 	private JButton save = new JButton("Save");
 	private JButton search = new JButton("Search");
 	private JTextField searchbar = new JTextField(7);
+	private JButton clear = new JButton("Clear");
 
 	private Inventory i = new Inventory();
 
@@ -57,6 +59,9 @@ public class GUI implements ActionListener {
 		add.addActionListener(this);
 		panel.add(save);
 		save.addActionListener(this);
+		
+		panel.add(clear);
+		clear.addActionListener(this);
 
 		panel.add(search);
 		search.addActionListener(this);
@@ -66,7 +71,7 @@ public class GUI implements ActionListener {
 
 		frame.add(panel);
 		frame.setTitle("Shlefstein Footwear");
-		frame.setSize(580, 100);
+		frame.setSize(585, 120);
 		frame.setVisible(true);
 
 	}
@@ -91,8 +96,19 @@ public class GUI implements ActionListener {
 		if (str.equals("Save")) {
 			i.writeData();
 		}
+		
+		if (str.equals("Clear")) {
+			_name.setText("");
+			_price.setText("");
+			_quantity.setText("");
+			_id.setText("");
+			_color.setText("");
+			_material.setText("");
+			_size.setText("");
+		}
 
 		if (str.equals("Search")) {
+			try {
 			int index = i.findIndexByName(searchbar.getText());
 			_name.setText(i.findNameByIndex(index));
 			_price.setText(String.valueOf(i.getPrice(index)));
@@ -101,6 +117,14 @@ public class GUI implements ActionListener {
 			_color.setText(i.getColor(index));
 			_material.setText(i.getMaterial(index));
 			_size.setText(String.valueOf(i.getSize(index)));
+			} catch (Exception failure) {
+				System.out.println(failure);
+				_material.setText("Error-->");
+				_color.setText("Press");
+				_price.setText("Clear");
+				
+			}
+			
 		}
 
 	}
